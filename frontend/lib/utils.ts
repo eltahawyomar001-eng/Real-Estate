@@ -129,13 +129,20 @@ export function parseQueryString(queryString: string): Record<string, string> {
   return params
 }
 
-export function getMainImage(images: { url: string; isMain?: boolean }[]): string {
+export function getMainImage(images: string[] | { url: string; isMain?: boolean }[]): string {
   if (!images || images.length === 0) {
     return '/placeholder-property.jpg'
   }
   
-  const mainImage = images.find(img => img.isMain)
-  return mainImage?.url || images[0].url
+  // Handle simple string array
+  if (typeof images[0] === 'string') {
+    return images[0] as string
+  }
+  
+  // Handle object array with url and isMain properties
+  const typedImages = images as { url: string; isMain?: boolean }[]
+  const mainImage = typedImages.find(img => img.isMain)
+  return mainImage?.url || typedImages[0].url
 }
 
 export function generatePropertyUrl(property: { slug: string; _id: string }): string {
