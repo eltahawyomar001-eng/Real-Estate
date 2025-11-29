@@ -77,8 +77,8 @@ export function getListingTypeLabel(type: string): string {
 
 export function getStatusLabel(status: string): string {
   const statuses: Record<string, string> = {
-    available: 'Available',
-    pending: 'Pending',
+    'for-sale': 'For Sale',
+    'for-rent': 'For Rent',
     sold: 'Sold',
     rented: 'Rented'
   }
@@ -87,9 +87,9 @@ export function getStatusLabel(status: string): string {
 
 export function getStatusColor(status: string): string {
   const colors: Record<string, string> = {
-    available: 'bg-green-100 text-green-800',
-    pending: 'bg-yellow-100 text-yellow-800',
-    sold: 'bg-blue-100 text-blue-800',
+    'for-sale': 'bg-green-100 text-green-800',
+    'for-rent': 'bg-blue-100 text-blue-800',
+    sold: 'bg-gray-100 text-gray-800',
     rented: 'bg-purple-100 text-purple-800'
   }
   return colors[status] || 'bg-gray-100 text-gray-800'

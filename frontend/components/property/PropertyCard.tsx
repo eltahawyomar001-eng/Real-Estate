@@ -79,8 +79,8 @@ export default function PropertyCard({ property, onFavoriteChange, isFavorited =
             )}
           </div>
 
-          {/* Status Badge */}
-          {property.status !== 'available' && (
+          {/* Status Badge - Show when property is sold or rented */}
+          {(property.status === 'sold' || property.status === 'rented') && (
             <div className="absolute top-3 right-12">
               <span className={cn("badge", getStatusColor(property.status))}>
                 {getStatusLabel(property.status)}
