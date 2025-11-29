@@ -58,24 +58,31 @@ export interface Property {
   slug: string
   description: string
   propertyType: 'house' | 'apartment' | 'condo' | 'townhouse' | 'villa' | 'land' | 'commercial' | 'office'
-  listingType: 'sale' | 'rent'
-  status: 'available' | 'pending' | 'sold' | 'rented'
+  listingType?: 'sale' | 'rent'
+  status: 'for-sale' | 'for-rent' | 'sold' | 'rented'
   price: number
-  priceUnit: 'total' | 'monthly' | 'yearly' | 'sqft'
-  address: Address & { street: string; city: string; state: string; zipCode: string }
+  priceUnit?: 'total' | 'monthly' | 'yearly' | 'sqft'
+  address: string
+  city: string
+  state: string
+  zipCode: string
   location?: PropertyLocation
-  features: PropertyFeatures
-  amenities: string[]
-  images: PropertyImage[]
+  bedrooms: number
+  bathrooms: number
+  area: number
+  yearBuilt?: number
+  parking?: number
+  features?: string[]
+  images: string[]
   virtualTour?: string
   video?: string
-  agent: User
-  isFeatured: boolean
-  views: number
-  publishedAt: string
+  agent: User | string
+  isFeatured?: boolean
   isActive: boolean
+  views?: number
+  publishedAt?: string
   createdAt: string
-  updatedAt: string
+  updatedAt?: string
 }
 
 export interface Inquiry {
