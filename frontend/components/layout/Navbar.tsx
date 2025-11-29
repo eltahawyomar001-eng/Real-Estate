@@ -64,11 +64,11 @@ export default function Navbar() {
       )}
     >
       <nav className="container-custom">
-        <div className="flex items-center justify-between h-16 md:h-20">
+        <div className="flex items-center justify-between h-20 md:h-24">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
+          <Link href="/" className="flex items-center gap-3">
             <div className={cn(
-              "w-10 h-10 rounded-lg flex items-center justify-center",
+              "w-11 h-11 rounded-xl flex items-center justify-center",
               isScrolled || pathname !== '/' ? 'bg-primary-600' : 'bg-white'
             )}>
               <Building2 className={cn(
@@ -85,13 +85,13 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-10">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
                 className={cn(
-                  "text-sm font-medium transition-colors",
+                  "text-sm font-semibold transition-colors",
                   isActive(item.href) 
                     ? 'text-primary-600' 
                     : isScrolled || pathname !== '/'

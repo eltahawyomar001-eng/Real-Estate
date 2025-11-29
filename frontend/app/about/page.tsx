@@ -68,7 +68,7 @@ export default function AboutPage() {
   return (
     <main className="pt-20">
       {/* Hero Section */}
-      <section className="relative h-[50vh] min-h-[400px] bg-gray-900">
+      <section className="relative h-[60vh] min-h-[500px] bg-gray-900">
         <Image
           src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1920&h=800&fit=crop"
           alt="About RealEstate Pro"
@@ -76,9 +76,9 @@ export default function AboutPage() {
           className="object-cover opacity-40"
         />
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-center text-white px-4">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">About Us</h1>
-            <p className="text-xl md:text-2xl text-gray-200 max-w-3xl">
+          <div className="text-center text-white px-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">About Us</h1>
+            <p className="text-xl md:text-2xl text-gray-200 max-w-3xl leading-relaxed">
               Your trusted partner in finding the perfect property since 2008
             </p>
           </div>
@@ -86,14 +86,14 @@ export default function AboutPage() {
       </section>
 
       {/* Stats Section */}
-      <section className="section-padding bg-primary-600">
+      <section className="py-16 md:py-20 bg-primary-600">
         <div className="container-custom">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
             {stats.map((stat, index) => (
               <div key={index} className="text-center text-white">
-                <stat.icon className="w-12 h-12 mx-auto mb-4 opacity-80" />
-                <div className="text-4xl font-bold mb-2">{stat.value}</div>
-                <div className="text-primary-100">{stat.label}</div>
+                <stat.icon className="w-14 h-14 mx-auto mb-5 opacity-80" />
+                <div className="text-5xl font-bold mb-3">{stat.value}</div>
+                <div className="text-primary-100 text-lg">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -101,12 +101,12 @@ export default function AboutPage() {
       </section>
 
       {/* Our Story Section */}
-      <section className="section-padding">
+      <section className="section-padding bg-white">
         <div className="container-custom">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Our Story</h2>
-              <div className="space-y-4 text-gray-600">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">Our Story</h2>
+              <div className="space-y-6 text-gray-600 text-lg leading-relaxed">
                 <p>
                   Founded in 2008, RealEstate Pro started with a simple mission: to help people find their perfect home with ease and confidence. What began as a small team of passionate real estate professionals has grown into one of the most trusted names in the industry.
                 </p>
@@ -117,12 +117,12 @@ export default function AboutPage() {
                   Today, we continue to innovate and adapt to the ever-changing real estate landscape, leveraging cutting-edge technology while maintaining the personal touch that has always defined our service.
                 </p>
               </div>
-              <Link href="/contact" className="btn-primary inline-flex mt-8">
+              <Link href="/contact" className="btn-primary btn-lg inline-flex mt-10">
                 Get in Touch
                 <ArrowRight className="w-5 h-5 ml-2" />
               </Link>
             </div>
-            <div className="relative h-[400px] lg:h-[500px] rounded-2xl overflow-hidden">
+            <div className="relative h-[450px] lg:h-[550px] rounded-2xl overflow-hidden shadow-2xl">
               <Image
                 src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&h=1000&fit=crop"
                 alt="Our office"
@@ -137,18 +137,18 @@ export default function AboutPage() {
       {/* Our Values Section */}
       <section className="section-padding bg-gray-50">
         <div className="container-custom">
-          <div className="text-center max-w-2xl mx-auto mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Values</h2>
-            <p className="text-gray-600">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Our Values</h2>
+            <p className="text-gray-600 text-lg leading-relaxed">
               These core principles guide everything we do and define who we are as a company.
             </p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
-              <div key={index} className="bg-white rounded-xl p-6 shadow-sm">
-                <CheckCircle className="w-10 h-10 text-primary-600 mb-4" />
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">{value.title}</h3>
-                <p className="text-gray-600">{value.description}</p>
+              <div key={index} className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition-shadow">
+                <CheckCircle className="w-12 h-12 text-primary-600 mb-6" />
+                <h3 className="text-xl font-bold text-gray-900 mb-3">{value.title}</h3>
+                <p className="text-gray-600 leading-relaxed">{value.description}</p>
               </div>
             ))}
           </div>
@@ -156,18 +156,18 @@ export default function AboutPage() {
       </section>
 
       {/* Team Section */}
-      <section className="section-padding">
+      <section className="section-padding bg-white">
         <div className="container-custom">
-          <div className="text-center max-w-2xl mx-auto mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Meet Our Team</h2>
-            <p className="text-gray-600">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Meet Our Team</h2>
+            <p className="text-gray-600 text-lg leading-relaxed">
               Our dedicated team of professionals is here to help you achieve your real estate goals.
             </p>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
             {team.map((member, index) => (
               <div key={index} className="text-center group">
-                <div className="relative w-48 h-48 mx-auto mb-4 rounded-full overflow-hidden">
+                <div className="relative w-52 h-52 mx-auto mb-6 rounded-full overflow-hidden shadow-lg">
                   <Image
                     src={member.image}
                     alt={member.name}
@@ -175,8 +175,8 @@ export default function AboutPage() {
                     className="object-cover transition-transform group-hover:scale-110"
                   />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900">{member.name}</h3>
-                <p className="text-gray-500">{member.role}</p>
+                <h3 className="text-xl font-bold text-gray-900 mb-1">{member.name}</h3>
+                <p className="text-gray-500 text-lg">{member.role}</p>
               </div>
             ))}
           </div>
@@ -184,19 +184,19 @@ export default function AboutPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding bg-primary-600">
+      <section className="py-20 md:py-28 bg-gradient-to-br from-primary-600 to-primary-700">
         <div className="container-custom text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
             Ready to Find Your Dream Property?
           </h2>
-          <p className="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-primary-100 mb-10 max-w-2xl mx-auto leading-relaxed">
             Join thousands of satisfied clients who found their perfect home with RealEstate Pro.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/properties" className="btn bg-white text-primary-600 hover:bg-gray-100">
+          <div className="flex flex-col sm:flex-row gap-5 justify-center">
+            <Link href="/properties" className="btn btn-lg bg-white text-primary-600 hover:bg-gray-100 shadow-lg">
               Browse Properties
             </Link>
-            <Link href="/contact" className="btn border-2 border-white text-white hover:bg-white hover:text-primary-600">
+            <Link href="/contact" className="btn btn-lg border-2 border-white text-white hover:bg-white hover:text-primary-600">
               Contact Us
             </Link>
           </div>
