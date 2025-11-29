@@ -127,27 +127,27 @@ export default function PropertyCard({ property, onFavoriteChange, isFavorited =
           <div className="flex items-center gap-1 text-gray-500 text-sm mb-3">
             <MapPin className="w-4 h-4 flex-shrink-0" />
             <span className="line-clamp-1">
-              {property.address.city}, {property.address.state}
+              {property.city}, {property.state}
             </span>
           </div>
 
           {/* Features */}
           <div className="flex items-center gap-4 text-sm text-gray-600 pt-3 border-t">
-            {property.features.bedrooms > 0 && (
+            {property.bedrooms > 0 && (
               <div className="flex items-center gap-1">
                 <Bed className="w-4 h-4 text-gray-400" />
-                <span>{property.features.bedrooms} Beds</span>
+                <span>{property.bedrooms} Beds</span>
               </div>
             )}
-            {property.features.bathrooms > 0 && (
+            {property.bathrooms > 0 && (
               <div className="flex items-center gap-1">
                 <Bath className="w-4 h-4 text-gray-400" />
-                <span>{property.features.bathrooms} Baths</span>
+                <span>{property.bathrooms} Baths</span>
               </div>
             )}
             <div className="flex items-center gap-1">
               <Square className="w-4 h-4 text-gray-400" />
-              <span>{formatArea(property.features.area)}</span>
+              <span>{formatArea(property.area)}</span>
             </div>
           </div>
         </div>
