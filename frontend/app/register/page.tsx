@@ -59,39 +59,39 @@ export default function RegisterPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4 py-24">
-      <div className="w-full max-w-md">
-        <div className="bg-white rounded-2xl shadow-xl p-8">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center px-6 py-28">
+      <div className="w-full max-w-lg">
+        <div className="bg-white rounded-3xl shadow-2xl p-10">
           {/* Header */}
-          <div className="text-center mb-8">
-            <h1 className="text-2xl font-bold text-gray-900">Create Account</h1>
-            <p className="text-gray-600 mt-2">Join RealEstate Pro today</p>
+          <div className="text-center mb-10">
+            <h1 className="text-3xl font-bold text-gray-900">Create Account</h1>
+            <p className="text-gray-500 mt-3 text-lg">Join RealEstate Pro today</p>
           </div>
 
           {/* Form */}
-          <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
+          <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
             {/* Role Selection */}
             <div>
               <label className="label">I want to</label>
-              <div className="grid grid-cols-2 gap-3">
-                <label className={`relative flex items-center justify-center p-4 border-2 rounded-xl cursor-pointer transition-colors ${
-                  selectedRole === 'user' ? 'border-primary-600 bg-primary-50' : 'border-gray-200 hover:border-gray-300'
+              <div className="grid grid-cols-2 gap-4">
+                <label className={`relative flex items-center justify-center p-5 border-2 rounded-2xl cursor-pointer transition-all ${
+                  selectedRole === 'user' ? 'border-primary-600 bg-primary-50 shadow-md' : 'border-gray-200 hover:border-gray-300 hover:bg-gray-50'
                 }`}>
                   <input type="radio" value="user" {...register('role')} className="sr-only" />
                   <div className="text-center">
-                    <User className={`w-6 h-6 mx-auto mb-1 ${selectedRole === 'user' ? 'text-primary-600' : 'text-gray-400'}`} />
-                    <span className={`text-sm font-medium ${selectedRole === 'user' ? 'text-primary-600' : 'text-gray-700'}`}>
+                    <User className={`w-7 h-7 mx-auto mb-2 ${selectedRole === 'user' ? 'text-primary-600' : 'text-gray-400'}`} />
+                    <span className={`text-sm font-semibold ${selectedRole === 'user' ? 'text-primary-600' : 'text-gray-700'}`}>
                       Find a Home
                     </span>
                   </div>
                 </label>
-                <label className={`relative flex items-center justify-center p-4 border-2 rounded-xl cursor-pointer transition-colors ${
-                  selectedRole === 'agent' ? 'border-primary-600 bg-primary-50' : 'border-gray-200 hover:border-gray-300'
+                <label className={`relative flex items-center justify-center p-5 border-2 rounded-2xl cursor-pointer transition-all ${
+                  selectedRole === 'agent' ? 'border-primary-600 bg-primary-50 shadow-md' : 'border-gray-200 hover:border-gray-300 hover:bg-gray-50'
                 }`}>
                   <input type="radio" value="agent" {...register('role')} className="sr-only" />
                   <div className="text-center">
-                    <User className={`w-6 h-6 mx-auto mb-1 ${selectedRole === 'agent' ? 'text-primary-600' : 'text-gray-400'}`} />
-                    <span className={`text-sm font-medium ${selectedRole === 'agent' ? 'text-primary-600' : 'text-gray-700'}`}>
+                    <User className={`w-7 h-7 mx-auto mb-2 ${selectedRole === 'agent' ? 'text-primary-600' : 'text-gray-400'}`} />
+                    <span className={`text-sm font-semibold ${selectedRole === 'agent' ? 'text-primary-600' : 'text-gray-700'}`}>
                       List Properties
                     </span>
                   </div>
@@ -112,7 +112,7 @@ export default function RegisterPage() {
                 />
               </div>
               {errors.name && (
-                <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>
+                <p className="text-red-500 text-sm mt-2">{errors.name.message}</p>
               )}
             </div>
 
@@ -129,7 +129,7 @@ export default function RegisterPage() {
                 />
               </div>
               {errors.email && (
-                <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
+                <p className="text-red-500 text-sm mt-2">{errors.email.message}</p>
               )}
             </div>
 
@@ -167,7 +167,7 @@ export default function RegisterPage() {
                 </button>
               </div>
               {errors.password && (
-                <p className="text-red-500 text-sm mt-1">{errors.password.message}</p>
+                <p className="text-red-500 text-sm mt-2">{errors.password.message}</p>
               )}
             </div>
 
@@ -184,7 +184,7 @@ export default function RegisterPage() {
                 />
               </div>
               {errors.confirmPassword && (
-                <p className="text-red-500 text-sm mt-1">{errors.confirmPassword.message}</p>
+                <p className="text-red-500 text-sm mt-2">{errors.confirmPassword.message}</p>
               )}
             </div>
 
@@ -192,7 +192,7 @@ export default function RegisterPage() {
             <button
               type="submit"
               disabled={loading}
-              className="btn-primary w-full py-3"
+              className="btn-primary btn-lg w-full"
             >
               {loading ? (
                 <>
@@ -206,9 +206,9 @@ export default function RegisterPage() {
           </form>
 
           {/* Divider */}
-          <div className="relative my-8">
+          <div className="relative my-10">
             <div className="absolute inset-0 flex items-center">
-              <div className="w-full border-t" />
+              <div className="w-full border-t border-gray-200" />
             </div>
             <div className="relative flex justify-center text-sm">
               <span className="bg-white px-4 text-gray-500">Already have an account?</span>
@@ -218,7 +218,7 @@ export default function RegisterPage() {
           {/* Login Link */}
           <Link
             href="/login"
-            className="btn-secondary w-full py-3 block text-center"
+            className="btn btn-lg w-full block text-center border-2 border-gray-200 text-gray-700 hover:bg-gray-50 hover:border-gray-300"
           >
             Sign In
           </Link>

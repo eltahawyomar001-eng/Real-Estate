@@ -41,17 +41,17 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4 py-20">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center px-6 py-24">
       <div className="w-full max-w-md">
-        <div className="bg-white rounded-2xl shadow-xl p-8">
+        <div className="bg-white rounded-3xl shadow-2xl p-10">
           {/* Header */}
-          <div className="text-center mb-8">
-            <h1 className="text-2xl font-bold text-gray-900">Welcome Back</h1>
-            <p className="text-gray-600 mt-2">Sign in to your account</p>
+          <div className="text-center mb-10">
+            <h1 className="text-3xl font-bold text-gray-900">Welcome Back</h1>
+            <p className="text-gray-500 mt-3 text-lg">Sign in to your account</p>
           </div>
 
           {/* Form */}
-          <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
+          <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
             {/* Email */}
             <div>
               <label className="label">Email</label>
@@ -65,7 +65,7 @@ export default function LoginPage() {
                 />
               </div>
               {errors.email && (
-                <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
+                <p className="text-red-500 text-sm mt-2">{errors.email.message}</p>
               )}
             </div>
 
@@ -89,13 +89,13 @@ export default function LoginPage() {
                 </button>
               </div>
               {errors.password && (
-                <p className="text-red-500 text-sm mt-1">{errors.password.message}</p>
+                <p className="text-red-500 text-sm mt-2">{errors.password.message}</p>
               )}
             </div>
 
             {/* Forgot Password */}
             <div className="flex justify-end">
-              <Link href="/forgot-password" className="text-sm text-primary-600 hover:underline">
+              <Link href="/forgot-password" className="text-sm font-medium text-primary-600 hover:text-primary-700 hover:underline">
                 Forgot password?
               </Link>
             </div>
@@ -104,7 +104,7 @@ export default function LoginPage() {
             <button
               type="submit"
               disabled={loading}
-              className="btn-primary w-full py-3"
+              className="btn-primary btn-lg w-full"
             >
               {loading ? (
                 <>
@@ -118,9 +118,9 @@ export default function LoginPage() {
           </form>
 
           {/* Divider */}
-          <div className="relative my-8">
+          <div className="relative my-10">
             <div className="absolute inset-0 flex items-center">
-              <div className="w-full border-t" />
+              <div className="w-full border-t border-gray-200" />
             </div>
             <div className="relative flex justify-center text-sm">
               <span className="bg-white px-4 text-gray-500">Don't have an account?</span>
@@ -130,17 +130,19 @@ export default function LoginPage() {
           {/* Register Link */}
           <Link
             href="/register"
-            className="btn-secondary w-full py-3 block text-center"
+            className="btn btn-lg w-full block text-center border-2 border-gray-200 text-gray-700 hover:bg-gray-50 hover:border-gray-300"
           >
             Create Account
           </Link>
         </div>
 
         {/* Demo Credentials */}
-        <div className="mt-6 text-center text-sm text-gray-500">
-          <p className="font-medium mb-2">Demo Credentials:</p>
-          <p>Admin: admin@realestate.com / admin123</p>
-          <p>Agent: john@realestate.com / agent123</p>
+        <div className="mt-8 bg-white rounded-2xl shadow-lg p-6 text-center">
+          <p className="font-semibold text-gray-900 mb-3">Demo Credentials</p>
+          <div className="space-y-2 text-sm text-gray-600">
+            <p><span className="font-medium">Admin:</span> admin@realestate.com / admin123</p>
+            <p><span className="font-medium">Agent:</span> john@realestate.com / agent123</p>
+          </div>
         </div>
       </div>
     </div>
