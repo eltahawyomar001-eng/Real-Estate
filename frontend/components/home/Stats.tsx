@@ -54,9 +54,9 @@ export default function Stats() {
   }, [])
 
   return (
-    <section className="py-16 bg-primary-600" ref={ref}>
+    <section className="py-20 md:py-24 bg-primary-600" ref={ref}>
       <div className="container-custom">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 md:gap-16">
           {stats.map((stat, index) => (
             <StatItem key={index} stat={stat} isVisible={isVisible} />
           ))}
@@ -71,13 +71,13 @@ function StatItem({ stat, isVisible }: { stat: typeof stats[0], isVisible: boole
 
   return (
     <div className="text-center">
-      <div className="inline-flex items-center justify-center w-14 h-14 bg-white/10 rounded-full mb-4">
-        <stat.icon className="w-7 h-7 text-white" />
+      <div className="inline-flex items-center justify-center w-16 h-16 bg-white/10 rounded-full mb-5">
+        <stat.icon className="w-8 h-8 text-white" />
       </div>
-      <div className="text-4xl md:text-5xl font-bold text-white mb-2">
+      <div className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3">
         {count.toLocaleString()}{stat.suffix}
       </div>
-      <div className="text-white/80">{stat.label}</div>
+      <div className="text-white/80 text-lg">{stat.label}</div>
     </div>
   )
 }

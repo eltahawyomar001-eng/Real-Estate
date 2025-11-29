@@ -40,15 +40,15 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="section">
+    <section className="py-20 md:py-28">
       <div className="container-custom">
         {/* Header */}
-        <div className="text-center mb-12">
-          <span className="text-primary-600 font-medium mb-2 block">Testimonials</span>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        <div className="text-center mb-16">
+          <span className="text-primary-600 font-semibold text-sm uppercase tracking-wider mb-3 block">Testimonials</span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-5">
             What Our Clients Say
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="text-gray-600 max-w-2xl mx-auto text-lg">
             Don't just take our word for it. Here's what our satisfied clients have to say.
           </p>
         </div>
@@ -56,7 +56,7 @@ export default function Testimonials() {
         {/* Testimonials Slider */}
         <Swiper
           modules={[Pagination, Autoplay]}
-          spaceBetween={24}
+          spaceBetween={32}
           slidesPerView={1}
           pagination={{ clickable: true }}
           autoplay={{ delay: 5000, disableOnInteraction: false }}
@@ -64,36 +64,36 @@ export default function Testimonials() {
             640: { slidesPerView: 2 },
             1024: { slidesPerView: 3 }
           }}
-          className="pb-12"
+          className="pb-14"
         >
           {testimonials.map((testimonial, index) => (
             <SwiperSlide key={index}>
-              <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 h-full">
+              <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 h-full hover:shadow-lg transition-shadow">
                 {/* Quote Icon */}
-                <Quote className="w-10 h-10 text-primary-100 mb-4" />
+                <Quote className="w-12 h-12 text-primary-100 mb-5" />
                 
                 {/* Content */}
-                <p className="text-gray-600 mb-6">{testimonial.content}</p>
+                <p className="text-gray-600 mb-6 leading-relaxed text-lg">{testimonial.content}</p>
                 
                 {/* Rating */}
-                <div className="flex gap-1 mb-4">
+                <div className="flex gap-1 mb-5">
                   {Array.from({ length: testimonial.rating }).map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                    <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
                   ))}
                 </div>
                 
                 {/* Author */}
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-4">
                   <Image
                     src={testimonial.image}
                     alt={testimonial.name}
-                    width={48}
-                    height={48}
+                    width={56}
+                    height={56}
                     className="rounded-full object-cover"
                   />
                   <div>
-                    <h4 className="font-semibold text-gray-900">{testimonial.name}</h4>
-                    <p className="text-sm text-gray-500">{testimonial.role}</p>
+                    <h4 className="font-semibold text-gray-900 text-lg">{testimonial.name}</h4>
+                    <p className="text-gray-500">{testimonial.role}</p>
                   </div>
                 </div>
               </div>

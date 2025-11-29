@@ -27,16 +27,16 @@ export default function FeaturedProperties() {
   }
 
   return (
-    <section className="section bg-gray-50">
+    <section className="py-20 md:py-28 bg-gray-50">
       <div className="container-custom">
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
           <div>
-            <span className="text-primary-600 font-medium mb-2 block">Featured Listings</span>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+            <span className="text-primary-600 font-semibold text-sm uppercase tracking-wider mb-3 block">Featured Listings</span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
               Discover Our Best Properties
             </h2>
-            <p className="text-gray-600 mt-2 max-w-xl">
+            <p className="text-gray-600 mt-4 max-w-xl text-lg">
               Handpicked properties that offer the best value and features for you.
             </p>
           </div>
@@ -51,17 +51,17 @@ export default function FeaturedProperties() {
 
         {/* Properties Grid */}
         {loading ? (
-          <div className="flex items-center justify-center py-20">
-            <Loader2 className="w-8 h-8 animate-spin text-primary-600" />
+          <div className="flex items-center justify-center py-24">
+            <Loader2 className="w-10 h-10 animate-spin text-primary-600" />
           </div>
         ) : properties.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {properties.map((property) => (
               <PropertyCard key={property._id} property={property} />
             ))}
           </div>
         ) : (
-          <div className="text-center py-20 text-gray-500">
+          <div className="text-center py-24 text-gray-500 text-lg">
             No featured properties available at the moment.
           </div>
         )}

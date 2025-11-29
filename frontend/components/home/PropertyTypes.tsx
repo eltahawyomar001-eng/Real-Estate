@@ -49,24 +49,24 @@ const propertyTypes = [
 
 export default function PropertyTypes() {
   return (
-    <section className="section">
+    <section className="py-20 md:py-28">
       <div className="container-custom">
         {/* Header */}
-        <div className="text-center mb-12">
-          <span className="text-primary-600 font-medium mb-2 block">Property Types</span>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        <div className="text-center mb-16">
+          <span className="text-primary-600 font-semibold text-sm uppercase tracking-wider mb-3 block">Property Types</span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-5">
             Explore By Property Type
           </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="text-gray-600 max-w-2xl mx-auto text-lg">
             Find the perfect property type that suits your needs and preferences.
           </p>
         </div>
 
         {/* Property Types Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-5 md:gap-6">
           {propertyTypes.map((type) => (
             <Link key={type.name} href={type.href}>
-              <div className="group relative h-48 md:h-56 rounded-xl overflow-hidden">
+              <div className="group relative h-56 md:h-64 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
                 <Image
                   src={type.image}
                   alt={type.name}
@@ -74,9 +74,9 @@ export default function PropertyTypes() {
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-                <div className="absolute inset-0 flex flex-col items-center justify-end p-4 text-white">
-                  <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mb-3 group-hover:bg-primary-600 transition-colors">
-                    <type.icon className="w-6 h-6" />
+                <div className="absolute inset-0 flex flex-col items-center justify-end p-5 text-white">
+                  <div className="w-14 h-14 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mb-4 group-hover:bg-primary-600 transition-colors">
+                    <type.icon className="w-7 h-7" />
                   </div>
                   <h3 className="font-semibold text-lg">{type.name}</h3>
                   <p className="text-sm text-white/80">{type.count} Properties</p>
